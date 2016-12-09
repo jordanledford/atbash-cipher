@@ -1,32 +1,35 @@
+// a laughably weak, ancient system of encryption
+// this was really fun to make though.
+
 var atbash = function(string){
   var schema = [
-    {'A' : 'Z'}
-  	{'B' : 'Y'}
-    {'C' : 'X'}
-    {'D' : 'W'}
-    {'E' : 'V'}
-    {'F' : 'U'}
-    {'G' : 'T'}
-  	{'H' : 'S'}
-    {'I' : 'R'}
-    {'J' : 'Q'}
-    {'K' : 'P'}
-    {'L' : 'O'}
-    {'M' : 'N'}
-    {'N' : 'M'}
-    {'O' : 'L'}
-    {'P' : 'K'}
-    {'Q' : 'J'}
-    {'R' : 'I'}
-    {'S' : 'H'}
-    {'T' : 'G'}
-    {'U' : 'F'}
-    {'V' : 'E'}
-    {'W' : 'D'}
-    {'X' : 'C'}
-    {'Y' : 'B'}
+    {'A' : 'Z'},
+  	{'B' : 'Y'},
+    {'C' : 'X'},
+    {'D' : 'W'},
+    {'E' : 'V'},
+    {'F' : 'U'},
+    {'G' : 'T'},
+  	{'H' : 'S'},
+    {'I' : 'R'},
+    {'J' : 'Q'},
+    {'K' : 'P'},
+    {'L' : 'O'},
+    {'M' : 'N'},
+    {'N' : 'M'},
+    {'O' : 'L'},
+    {'P' : 'K'},
+    {'Q' : 'J'},
+    {'R' : 'I'},
+    {'S' : 'H'},
+    {'T' : 'G'},
+    {'U' : 'F'},
+    {'V' : 'E'},
+    {'W' : 'D'},
+    {'X' : 'C'},
+    {'Y' : 'B'},
     {'Z' : 'A'}
-]
+  ]
 
   var arrayOfCharacters = string.split()
   var encoder = function(character){
@@ -58,3 +61,5 @@ var atbash = function(string){
   return arrayOfCharacters.join()
 
 }
+
+atbash.("Wow I cant believe this works")
