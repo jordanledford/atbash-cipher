@@ -1,7 +1,7 @@
 // a laughably weak, ancient system of encryption
 // this was really fun to make though.
 
-var atbash = function(string){
+var atbash = function(string) {
   var schema = [
     {'A' : 'Z'},
   	{'B' : 'Y'},
@@ -31,35 +31,36 @@ var atbash = function(string){
     {'Z' : 'A'}
   ]
 
-  var arrayOfCharacters = string.split()
-  var encoder = function(character){
-    character.toUpperCase()
+  var replaceEachCharacter = function(character){
+    character.toUpperCase();
     // need to return opposite value in array
     // and also return them each in objects.
   }
 
-  var scrambler = function(array){
+  var returnEachNewCharacter = function(array){
     // for each character in array, return the associated value
     // within the schema object
-    return array.forEach(encoder)
+    return array.forEach(replaceEachCharacter);
   }
 
-  var isASentence = function(){
-    if(arrayofCharacters.indexOf(".") !== -1){
-      return true
+  var isASentence = function(array){
+    if (array.indexOf(".") !== -1) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
+  var arrayOfCharacters = string.split();
   if (arrayOfCharacters.filter(isASentence)){
     // do something sentence related
+
   } else {
-    arrayofCharacters.scrambler()
+    arrayofCharacters.returnEachNewCharacter();
   }
   // need to add a space every 5 characters
-  return arrayOfCharacters.join()
+  return arrayOfCharacters.join();
 
 }
 
-atbash.("Wow I cant believe this works")
+atbash.("Wow I cant believe this works");
