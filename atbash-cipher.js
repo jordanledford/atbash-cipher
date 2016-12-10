@@ -44,7 +44,7 @@ var atbash = function(string) {
   }
 
   var isASentence = function(array){
-    if (array.indexOf(".") !== -1) {
+    if (array.indexOf(".") === -1) {
       return true;
     } else {
       return false;
