@@ -1,5 +1,7 @@
 // a laughably weak, ancient system of encryption
 // this was really fun to make though.
+// i need to change some of this and use RegExes
+// instead of how i had originally thought out the problem
 
 var atbash = function(string) {
   var schema = [
@@ -59,8 +61,8 @@ var atbash = function(string) {
     arrayofCharacters.returnEachNewCharacter();
   }
   // need to add a space every 5 characters
-  return arrayOfCharacters.join();
+  return arrayOfCharacters.join('');
 
 }
 
-atbash.("Wow I cant believe this works");
+atbash.("Wow super master encryption right here");
