@@ -1,68 +1,21 @@
-// a laughably weak, ancient system of encryption
-// this was really fun to make though.
-// i need to change some of this and use RegExes
-// instead of how i had originally thought out the problem
+const Atbash = function () { };
 
-var atbash = function(string) {
-  var schema = [
-    {'A' : 'Z'},
-  	{'B' : 'Y'},
-    {'C' : 'X'},
-    {'D' : 'W'},
-    {'E' : 'V'},
-    {'F' : 'U'},
-    {'G' : 'T'},
-  	{'H' : 'S'},
-    {'I' : 'R'},
-    {'J' : 'Q'},
-    {'K' : 'P'},
-    {'L' : 'O'},
-    {'M' : 'N'},
-    {'N' : 'M'},
-    {'O' : 'L'},
-    {'P' : 'K'},
-    {'Q' : 'J'},
-    {'R' : 'I'},
-    {'S' : 'H'},
-    {'T' : 'G'},
-    {'U' : 'F'},
-    {'V' : 'E'},
-    {'W' : 'D'},
-    {'X' : 'C'},
-    {'Y' : 'B'},
-    {'Z' : 'A'}
-  ]
+const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-  var replaceEachCharacter = function(character){
-    character.toUpperCase();
-    // need to return opposite value in array
-    // and also return them each in objects.
-  }
+const convert = function (char) {
+  const index = alphabet.indexOf(char);
+  return (index >= 0) ? alphabet[25 - index] : char;
+};
 
-  var returnEachNewCharacter = function(array){
-    // for each character in array, return the associated value
-    // within the schema object
-    return array.forEach(replaceEachCharacter);
-  }
+Atbash.prototype.encode = function (string) {
+  return string
+    .replace(/\W/g, '')
+    .toLowerCase()
+    .split('')
+    .map(convert)
+    .join('')
+    .match(/.{1,5}/g)
+    .join(' ');
+};
 
-  var isASentence = function(array){
-    if (array.indexOf(".") === -1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  var arrayOfCharacters = string.split();
-  if (arrayOfCharacters.filter(isASentence)){
-    // do something sentence related
-
-  } else {
-    arrayofCharacters.returnEachNewCharacter();
-  }
-  // need to add a space every 5 characters
-  return arrayOfCharacters.join('');
-
-}
-
-atbash.("Wow super master encryption right here");
+module.exports = new Atbash();
